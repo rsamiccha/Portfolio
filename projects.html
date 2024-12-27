@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio projects by R. Samiccha - Creative Visual Designer specializing in business cards, social media, flyers, UI/UX, and housing designs">
+    <title>Projects - R. Samiccha</title>
+    <link rel="icon" type="image/png" href="images/falcon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/business-cards.css">
+    <link rel="stylesheet" href="css/preview.css">
+    <link rel="stylesheet" href="css/gallery-slider.css">
+    <style>
+        /* Prevent content copying */
+        img {
+            pointer-events: none;
+            -webkit-user-drag: none;
+        }
+        body {
+            -webkit-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="projects-header">
+        <nav class="main-nav">
+            <div class="logo-container">
+                <img src="images/falcon.png" alt="Falcon Logo" class="logo-image">
+                <div class="logo">R.<span>Samiccha</span></div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#all" class="nav-link active" data-filter="all">All Projects</a>
+                <a href="#business-cards" class="nav-link" data-filter="business-cards">Business Cards</a>
+                <a href="#social-media" class="nav-link" data-filter="social-media">Social Media</a>
+                <a href="#flyers" class="nav-link" data-filter="flyers">Flyers</a>
+                <a href="#ui-ux" class="nav-link" data-filter="ui-ux">UI/UX</a>
+                <a href="#housing" class="nav-link" data-filter="housing">Housing</a>
+            </div>
+            <button class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Category Navigation -->
+    <nav class="category-nav">
+        <div class="category-filters">
+            <button class="cat-btn active" data-filter="all">All Projects</button>
+            <button class="cat-btn" data-filter="business-cards">Business Cards</button>
+            <button class="cat-btn" data-filter="social-media">Social Media</button>
+            <button class="cat-btn" data-filter="flyers">Flyers & Posters</button>
+            <button class="cat-btn" data-filter="ui-ux">UI/UX</button>
+            <button class="cat-btn" data-filter="housing">Housing</button>
+        </div>
+    </nav>
+
+    <!-- Projects Grid -->
+    <div class="projects-container">
+        <!-- Category Headers and Projects -->
+        <div class="category-section" id="business-cards">
+            <h2 class="category-title" data-count="1">Business Cards</h2>
+            <div class="projects-grid">
+                <!-- Business Card Item -->
+                <div class="project-item business-card-item" 
+                     data-front-img="images/front-1.png"
+                     data-back-img="images/back-1.png">
+                    <div class="card-preview">
+                        <img src="images/business-card.png" alt="Business Card Front">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Modern Business Card</h3>
+                        <p>Clean and professional design for corporate identity</p>
+                        <div class="project-tools">
+                            <span>Adobe Illustrator</span>
+                            <span>Photoshop</span>
+                            <button class="preview-btn">
+                                <i class="fas fa-search-plus"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more business cards with the same structure -->
+            </div>
+        </div>
+
+        <div class="category-section" id="social-media">
+            <h2 class="category-title" data-count="3">Social Media Designs</h2>
+            <div class="projects-grid">
+                    <!-- Cupcake Design -->
+                    <div class="project-item" data-category="social">
+                        <img src="images/cukcake.png" alt="Cupcake Design">
+                        <div class="project-overlay">
+                            <h3>Cupcake Social Post</h3>
+                            <p>Delicious cupcake promotion for social media marketing</p>
+                            <div class="project-tools">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <button class="preview-btn">
+                                    <i class="fas fa-search-plus"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Beauty Product Design -->
+                    <div class="project-item" data-category="social">
+                        <img src="images/skin-product-2.png" alt="Beauty Product Design">
+                        <div class="project-overlay">
+                            <h3>Beauty Product Campaign</h3>
+                            <p>Elegant social media design for beauty and skincare products</p>
+                            <div class="project-tools">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <button class="preview-btn">
+                                    <i class="fas fa-search-plus"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Beauty Product Design -->
+                    <div class="project-item" data-category="social">
+                        <img src="images/christmash-food.png" alt="Beauty Product Design">
+                        <div class="project-overlay">
+                            <h3>Beauty Product Campaign</h3>
+                            <p>Elegant social media design for beauty and skincare products</p>
+                            <div class="project-tools">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <button class="preview-btn">
+                                    <i class="fas fa-search-plus"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Beauty Product Design -->
+                    <div class="project-item" data-category="social">
+                        <img src="images/beauty-product.jpg" alt="Beauty Product Design">
+                        <div class="project-overlay">
+                            <h3>Beauty Product Campaign</h3>
+                            <p>Elegant social media design for beauty and skincare products</p>
+                            <div class="project-tools">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <button class="preview-btn">
+                                    <i class="fas fa-search-plus"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skin Product Design -->
+                    <div class="project-item" data-category="social">
+                        <img src="images/skinproduct.png" alt="Skin Product Design">
+                        <div class="project-overlay">
+                            <h3>Skincare Product Promotion</h3>
+                            <p>Modern and clean design for skincare product marketing</p>
+                            <div class="project-tools">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <button class="preview-btn">
+                                    <i class="fas fa-search-plus"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="category-section" id="flyers">
+            <h2 class="category-title" data-count="6">Flyers & Posters</h2>
+            <div class="projects-grid">
+                    <!-- Burger Flyer -->
+                    <div class="project-item" data-category="flyer">
+                        <img src="images/christmash-food-1.png" alt="Burger Flyer Design">
+                        <div class="project-overlay">
+                            <h3>Burger Offer Flyer</h3>
+                            <p>Food Product "Burger" promotional flyer design</p>
+                            <div class="project-tools">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <button class="preview-btn">
+                                    <i class="fas fa-search-plus"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Burger Flyer 1-->
+                    <div class="project-item" data-category="flyer">
+                        <img src="images/christhams-food-2.png" alt="Burger Flyer Design">
+                        <div class="project-overlay">
+                            <h3>Burger Offer Flyer</h3>
+                            <p>Food Product "Burger" promotional flyer design</p>
+                            <div class="project-tools">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <button class="preview-btn">
+                                    <i class="fas fa-search-plus"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pizza Flyer -->
+                    <div class="project-item" data-category="flyer">
+                        <img src="images/pizza.png" alt="Pizza Flyer Design">
+                        <div class="project-overlay">
+                            <h3>Pizza Offer Flyer</h3>
+                            <p>Food Product "Pizza" promotional flyer design</p>
+                            <div class="project-tools">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <button class="preview-btn">
+                                    <i class="fas fa-search-plus"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Burger Flyer 3 -->
+                    <div class="project-item" data-category="flyer">
+                        <img src="images/Flyers.png" alt="Burger Flyer Design">
+                        <div class="project-overlay">
+                            <h3>Burger Offer Flyer</h3>
+                            <p>Food Product "Burger" promotional flyer design</p>
+                            <div class="project-tools">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <button class="preview-btn">
+                                    <i class="fas fa-search-plus"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pizza Flyer 2 -->
+                    <div class="project-item" data-category="flyer">
+                        <img src="images/Flyers-1.png" alt="Pizza Flyer Design">
+                        <div class="project-overlay">
+                            <h3>Pizza Special Flyer</h3>
+                            <p>Food Product "Pizza" special offer flyer design</p>
+                            <div class="project-tools">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <button class="preview-btn">
+                                    <i class="fas fa-search-plus"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- MoMo Flyer -->
+                    <div class="project-item" data-category="flyer">
+                        <img src="images/Flyers-2.png" alt="MoMo Flyer Design">
+                        <div class="project-overlay">
+                            <h3>MoMo Offer Flyer</h3>
+                            <p>Food Product "MoMo" promotional flyer design</p>
+                            <div class="project-tools">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <button class="preview-btn">
+                                    <i class="fas fa-search-plus"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="ui-ux">
+            <h2 class="category-title" data-count="1">UI/UX Designs</h2>
+            <div class="projects-grid">
+                <!-- UI/UX -->
+                <div class="project-item" data-category="ui">
+                    <img src="images/ui-ux.png" alt="UI/UX Design">
+                    <div class="project-overlay">
+                        <h3>UI/UX Project</h3>
+                        <p>User-centered interface design with focus on user experience and accessibility</p>
+                        <div class="project-tools">
+                            <span>Adobe Photoshop</span>
+                            <span>Figma</span>
+                            <button class="preview-btn">
+                                <i class="fas fa-search-plus"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="housing">
+            <h2 class="category-title" data-count="1">Housing Projects</h2>
+            <div class="projects-grid">
+                <!-- Housing -->
+                <div class="project-item" data-category="housing">
+                    <img src="images/tata-paints.jpeg" alt="Housing Design">
+                    <div class="project-overlay">
+                        <h3>Housing Project</h3>
+                        <p>Modern architectural visualization with detailed interior and exterior designs</p>
+                        <div class="project-tools">
+                            <span>Adobe Photoshop</span>
+                            <span>SketchUp</span>
+                            <button class="preview-btn">
+                                <i class="fas fa-search-plus"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Screen Preview Modal -->
+    <div class="fullscreen-modal">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close modal">&times;</button>
+            
+            <!-- Business Card Preview Container -->
+            <div class="modal-card-preview">
+                <div class="card-sides">
+                    <div class="modal-card-front"></div>
+                    <div class="modal-card-back"></div>
+                </div>
+                <button class="modal-flip-btn">
+                    <i class="fas fa-sync-alt"></i> Click to Flip
+                </button>
+            </div>
+
+            <!-- Regular Image Preview Container -->
+            <div class="modal-image-container"></div>
+            
+            <div class="modal-hover-area"></div>
+            <div class="modal-info">
+                <h3 class="modal-title"></h3>
+                <p class="modal-description"></p>
+                <div class="modal-tools"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Information</h2>
+        <p class="contact-intro">Get in touch with me through these channels</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>samiccharanabhat@gmail.com</p>
+                </div>
+                <div class="social-links-contact">
+                    <h4>Connect With Me</h4>
+                    <div class="email-cta">
+                        <a href="mailto:samiccharanabhat@gmail.com?subject=Let's%20Work%20Together" class="email-btn">
+                            <i class="fas fa-envelope"></i>
+                            Email Me
+                        </a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/r.samiccha" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61569143611432" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://discord.gg/your_server" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.fiverr.com/samicchaa/" target="_blank" class="fiverr-link">
+                            <span class="fiverr-text">Fi</span>
+                        <a href="https://linkedin.com/in/your_profile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <div class="footer-content">
+                <p>&copy; 2024 R. Samiccha. All rights reserved.</p>
+                <a href="https://ug88.github.io/Portfolio" target="_blank" class="credit-link">
+                    Made by <span class="highlight">UNTILGAMER</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Animation -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <img src="images/falcon.png" alt="Loading...">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <script src="js/projects.js"></script>
+    <script>
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.querySelector('.page-loader').style.opacity = '0';
+            setTimeout(() => {
+                document.querySelector('.page-loader').style.display = 'none';
+            }, 500);
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,415 @@
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 25px;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.project-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-preview {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.project-item:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Modal styles */
+.fullscreen-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fullscreen-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-image-container {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-image-container img {
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+.modal-info {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    transition: bottom 0.3s ease;
+    text-align: center;
+}
+
+.modal-content:hover .modal-info {
+    bottom: 0;
+}
+
+/* Update close button style */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    z-index: 1002;
+}
+
+.close-modal:hover {
+    background: #fff;
+    transform: rotate(90deg);
+}
+
+/* Responsive adjustments for modal navigation */
+@media (max-width: 1200px) {
+    .close-modal {
+        top: 20px;
+        right: 20px;
+    }
+}
+
+/* Update navigation styles to match index page */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Update category navigation styles */
+.category-nav {
+    margin-top: 80px; /* Add space below main nav */
+    padding: 15px 0;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.category-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.cat-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #f5f5f5;
+    color: #333;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cat-btn:hover,
+.cat-btn.active {
+    background: var(--accent-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+    .category-nav {
+        margin-top: 70px;
+    }
+
+    .category-filters {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .cat-btn {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Business Card specific styles */
+.business-card-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-preview {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Project overlay styles (same for all items) */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.project-item:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Modal card preview styles */
+.modal-card-preview {
+    width: 100%;
+    max-width: 800px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: auto;
+    perspective: 2000px;
+    position: relative;
+    padding-top: 40px;
+}
+
+.card-sides {
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 1.6;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 100px;
+}
+
+.card-sides.flipped {
+    transform: rotateY(180deg) scale(1.02);
+}
+
+.modal-card-front,
+.modal-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-card-front {
+    transform: rotateY(0) translateZ(1px);
+}
+
+.modal-card-back {
+    transform: rotateY(180deg) translateZ(1px);
+}
+
+.card-sides.flipped .modal-card-front {
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card-sides.flipped .modal-card-back {
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
+}
+
+.modal-card-front img,
+.modal-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #fff;
+    border-radius: 12px;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Improved flip button style */
+.modal-flip-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    z-index: 1003;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-flip-btn i {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-flip-btn:hover {
+    background: #222;
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .modal-flip-btn {
+        bottom: 30px;
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Business card modal navigation */
+.business-card-modal .modal-prev,
+.business-card-modal .modal-next {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.business-card-modal .modal-prev:hover,
+.business-card-modal .modal-next:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Remove all navigation button styles */
+.modal-prev,
+.modal-next,
+.modal-nav,
+.has-multiple {
+    display: none !important;
+}
+
+/* Keep only the close button and other essential modal styles */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    z-index: 1002;
+}
+
+.close-modal:hover {
+    background: #fff;
+    transform: rotate(90deg);
+}
