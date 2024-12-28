@@ -71,16 +71,25 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleMenu() {
         navLinks.classList.toggle('active');
         document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        menuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
     }
     
     menuBtn.addEventListener('click', toggleMenu);
     
     // Close menu when clicking nav links
-    navLinksItems.forEach(link => {
+    navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            document.body.style.overflow = '';
+            toggleMenu();
         });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && 
+            !navLinks.contains(e.target) && 
+            !menuBtn.contains(e.target)) {
+            toggleMenu();
+        }
     });
 
     // Smooth scrolling with offset

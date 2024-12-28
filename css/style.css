@@ -616,44 +616,130 @@ footer {
         position: fixed;
         top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
+        width: 100%;
+        height: 100vh;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(10px);
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: 2rem;
         transform: translateX(100%);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1;
+        z-index: 999;
+        padding: 2rem;
     }
 
     .nav-links.active {
         transform: translateX(0);
     }
 
-    .menu-btn {
-        display: block;
-        z-index: 2;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        color: var(--text-color);
-        cursor: pointer;
-        padding: 0.5rem;
-        transition: color 0.3s ease;
+    .main-nav {
+        padding: 1rem;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
     }
 
-    .about-content,
-    .contact-container {
+    .logo-container {
+        gap: 0.5rem;
+    }
+
+    .logo-image {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .menu-btn {
+        display: block;
+        z-index: 1001;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        margin-left: auto;
+    }
+
+    /* Adjust section paddings for mobile */
+    section {
+        padding: 3rem 1rem;
+    }
+
+    /* Hero section adjustments */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Services grid adjustments */
+    .services-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Portfolio stats adjustments */
+    .portfolio-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Contact section adjustments */
+    .contact-container {
+        padding: 1rem;
+    }
+
+    .social-icons {
+        gap: 1rem;
+    }
+}
+
+/* Additional mobile fixes */
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .cta-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .skills {
+        padding: 1.5rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 360px) {
+    .logo {
+        font-size: 1.2rem;
     }
 
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
-} 
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
 
 /* Add new animations */
 @keyframes fadeInUp {
