@@ -22,6 +22,32 @@
             -webkit-user-select: none;
             user-select: none;
         }
+        /* Hide navigation links by default on mobile view */
+        .nav-links {
+            display: none;
+        }
+        .nav-links.active {
+            display: block;
+        }
+        /* Add hover animation for project cards */
+        .project-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(52, 152, 219, 0.2);
+        }
+        /* Hide loader */
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
@@ -39,7 +65,6 @@
                 <a href="#social-media" class="nav-link" data-filter="social-media">Social Media</a>
                 <a href="#flyers" class="nav-link" data-filter="flyers">Flyers</a>
                 <a href="#ui-ux" class="nav-link" data-filter="ui-ux">UI/UX</a>
-                <a href="#housing" class="nav-link" data-filter="housing">Housing</a>
             </div>
             <button class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -55,7 +80,6 @@
             <button class="cat-btn" data-filter="social-media">Social Media</button>
             <button class="cat-btn" data-filter="flyers">Flyers & Posters</button>
             <button class="cat-btn" data-filter="ui-ux">UI/UX</button>
-            <button class="cat-btn" data-filter="housing">Housing</button>
         </div>
     </nav>
     
@@ -89,14 +113,74 @@
         </div>
 
         <div class="category-section" id="social-media">
-            <h2 class="category-title" data-count="8">Social Media Designs</h2>
+            <h2 class="category-title" data-count="12">Social Media Designs</h2>
             <div class="projects-grid">
+                    <!-- Sport Shoes -->
+                    <div class="project-item" data-category="social">
+                        <img src="images/sport-shoes.jpeg" alt="Sport Shoes Design">
+                        <div class="project-overlay">
+                            <h3>Sport Shoes</h3>
+                            <p>Find The Best Sport Shoes For You to Make Your walking and running experience better</p>
+                            <div class="project-tools">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <button class="preview-btn">
+                                    <i class="fas fa-search-plus"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <!-- Goggles-->
+                <div class="project-item" data-category="social">
+                    <img src="images/goggles.jpeg" alt="Goggles Design">
+                    <div class="project-overlay">
+                        <h3>Goggles Design</h3>
+                        <p>Goggles promotion for social media marketing</p>
+                        <div class="project-tools">
+                            <span>Adobe Illustrator</span>
+                            <span>Photoshop</span>
+                            <button class="preview-btn">
+                                <i class="fas fa-search-plus"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Loyalty Card-->
+                <div class="project-item" data-category="social">
+                    <img src="images/loyalty-card.jpeg" alt="Loyalty Card">
+                    <div class="project-overlay">
+                        <h3>Loyalty Card</h3>
+                        <p>Engaging and informative loyalty card design</p>
+                        <div class="project-tools">
+                            <span>Adobe Illustrator</span>
+                            <span>Photoshop</span>
+                            <button class="preview-btn">
+                                <i class="fas fa-search-plus"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bakery -->
+                <div class="project-item" data-category="social">
+                    <img src="images/bakery-project.jpeg" alt="Bakery Project">
+                    <div class="project-overlay">
+                        <h3>Bakery Project</h3>
+                        <p>Delicious Cake Poster for social media marketing</p>
+                        <div class="project-tools">
+                            <span>Adobe Illustrator</span>
+                            <span>Photoshop</span>
+                            <button class="preview-btn">
+                                <i class="fas fa-search-plus"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
                     <!-- Car Rent -->
                     <div class="project-item" data-category="social">
                         <img src="images/car-rent.png" alt="Car Rent Design">
                         <div class="project-overlay">
                             <h3>Rent a Car</h3>
-                            <p>Find The Best Car For Rent Make Your Ride Better</p>
+                            <p>Find The Best Car For Rent to Make Your Ride Better</p>
                             <div class="project-tools">
                                 <span>Adobe Illustrator</span>
                                 <span>Photoshop</span>
@@ -214,8 +298,38 @@
             </div>
         </div>
         <div class="category-section" id="flyers">
-            <h2 class="category-title" data-count="7">Flyers & Posters</h2>
+            <h2 class="category-title" data-count="9">Flyers & Posters</h2>
             <div class="projects-grid">
+                <!-- Shoes-->
+                <div class="project-item" data-category="social">
+                    <img src="images/shoes-flyer.jpeg" alt="Shoes Project">
+                    <div class="project-overlay">
+                        <h3>Shoes Project</h3>
+                        <p>Shoes promotion Flyer</p>
+                        <div class="project-tools">
+                            <span>Adobe Illustrator</span>
+                            <span>Photoshop</span>
+                            <button class="preview-btn">
+                                <i class="fas fa-search-plus"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bakery Flyer-->
+                <div class="project-item" data-category="social">
+                    <img src="images/bakery-thing.jpeg" alt="Bakery Project">
+                    <div class="project-overlay">
+                        <h3>Bakery Flyer</h3>
+                        <p>Delicious Cake Flyer for social media marketing</p>
+                        <div class="project-tools">
+                            <span>Adobe Illustrator</span>
+                            <span>Photoshop</span>
+                            <button class="preview-btn">
+                                <i class="fas fa-search-plus"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
                     <!-- Promotional Shose Flyer -->
                     <div class="project-item" data-category="flyer">
                         <img src="images/shoes-flyer.png" alt="Shose Flyer Design">
@@ -343,26 +457,6 @@
                 </div>
             </div>
         </div>
-        <div class="category-section" id="housing">
-            <h2 class="category-title" data-count="1">Housing Projects</h2>
-            <div class="projects-grid">
-                <!-- Housing -->
-                <div class="project-item" data-category="housing">
-                    <img src="images/tata-paints.jpeg" alt="Housing Design">
-                    <div class="project-overlay">
-                        <h3>Housing Project</h3>
-                        <p>Modern architectural visualization with detailed interior and exterior designs</p>
-                        <div class="project-tools">
-                            <span>Adobe Photoshop</span>
-                            <span>SketchUp</span>
-                            <button class="preview-btn">
-                                <i class="fas fa-search-plus"></i> Preview
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- Full Screen Preview Modal -->
     <div class="fullscreen-modal">
@@ -411,10 +505,10 @@
                     <div class="social-icons">
                         <a href="https://www.instagram.com/r.samiccha" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.facebook.com/profile.php?id=61569143611432" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://discord.gg/your_server" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="https://discord.gg/uWphXSqvCG" target="_blank"><i class="fab fa-discord"></i></a>
                         <a href="https://www.fiverr.com/samicchaa/" target="_blank" class="fiverr-link">
                             <span class="fiverr-text">Fi</span>
-                        <a href="https://linkedin.com/in/your_profile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://linkedin.com/in/rsamiccha" target="_blank"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -432,7 +526,7 @@
         </div>
     </footer>
     <!-- Loading Animation -->
-    <div class="page-loader">
+    <div class="page-loader hidden">
         <div class="loader-content">
             <img src="images/falcon.png" alt="Loading...">
             <div class="loading-bar"></div>
@@ -440,13 +534,23 @@
     </div>
     <script src="js/projects.js"></script>
     <script>
-        // Add loading animation
+        // Hide loader after page load
         window.addEventListener('load', function() {
-            document.querySelector('.page-loader').style.opacity = '0';
-            setTimeout(() => {
-                document.querySelector('.page-loader').style.display = 'none';
-            }, 500);
+            document.querySelector('.page-loader').classList.add('hidden');
+        });
+
+        // Toggle navigation menu on mobile view
+        document.querySelector('.menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+
+        // Ensure nav menu is hidden by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.remove('active');
         });
     </script>
 </body>
-</html> 
+</html>
