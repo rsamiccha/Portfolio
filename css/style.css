@@ -642,6 +642,7 @@ footer {
     }
 
     .main-nav {
+        background-color: white;
         padding: 1rem;
         width: 100%;
         position: fixed;

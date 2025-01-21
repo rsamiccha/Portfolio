@@ -7,12 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     menuBtn.addEventListener('click', function() {
         navLinks.classList.toggle('active');
         menuBtn.classList.toggle('active');
-        // Prevent body scroll when menu is open
-        if (navLinks.classList.contains('active')) {
-            body.style.overflow = 'hidden';
-        } else {
-            body.style.overflow = '';
-        }
     });
 
     // Close menu when clicking outside
@@ -20,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!navLinks.contains(e.target) && !menuBtn.contains(e.target) && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             menuBtn.classList.remove('active');
-            body.style.overflow = '';
         }
     });
 
@@ -29,14 +22,13 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function() {
             navLinks.classList.remove('active');
             menuBtn.classList.remove('active');
-            body.style.overflow = '';
         });
     });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize preview buttons
-    function initializePreviewButtons() {
+    function initializePreviewButtons() {   
         document.querySelectorAll('.preview-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -117,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show modal
         modal.style.display = 'flex';
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
     }
 
     // Close modal functionality
@@ -125,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const modal = document.querySelector('.fullscreen-modal');
         modal.classList.remove('active');
         modal.style.display = 'none';
-        document.body.style.overflow = '';
         
         // Reset modal content
         modal.querySelector('.modal-image-container').innerHTML = '';
@@ -238,7 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
             filterProjects(category);
             navLinks.classList.remove('active');
             menuBtn.classList.remove('active');
-            document.body.style.overflow = '';
         });
     });
 
