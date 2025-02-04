@@ -839,22 +839,46 @@ img {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    body.nav-active {
+        overflow: hidden !important;
+        position: fixed !important;
+        width: 100%;
+        height: 100%;
+        touch-action: none; /* Prevents touch scrolling on mobile */
+    }
+
     .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        padding: 1rem;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 20px 20px;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        right: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 0;
+        font-size: 1.1rem;
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
     }
 
     .menu-btn {
@@ -1026,8 +1050,6 @@ img {
     display: none;
 }
 
-/* Keep the modal styles as they are */
-
 /* Main Navigation */
 .main-nav {
     display: flex;
@@ -1107,6 +1129,8 @@ img {
         height: 100vh;
         background: #fff;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 80px 20px 20px;
         transition: right 0.3s ease;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
@@ -1120,6 +1144,8 @@ img {
         display: block;
         padding: 15px 0;
         font-size: 1.1rem;
+        text-align: center;
+        width: 100%;
         border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 

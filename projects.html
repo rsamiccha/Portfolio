@@ -52,23 +52,26 @@
 </head>
 <body>
     <!-- Header with Navigation -->
-    <header class="projects-header">
-        <nav class="main-nav">
-            <div class="logo-container">
-                <img src="images/falcon.png" alt="Falcon Logo" class="logo-image">
-                <div class="logo">R.<span>Samiccha</span></div>
-            </div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="#all" class="nav-link active" data-filter="all">All Projects</a>
-                <a href="#business-cards" class="nav-link" data-filter="business-cards">Business Cards</a>
-                <a href="#social-media" class="nav-link" data-filter="social-media">Social Media</a>
-                <a href="#flyers" class="nav-link" data-filter="flyers">Flyers</a>
-                <a href="#ui-ux" class="nav-link" data-filter="ui-ux">UI/UX</a>
-            </div>
-            <button class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+    <header>
+        <nav>
+            <nav class="main-nav">
+                <div class="logo-container">
+                    <img src="images/falcon.png" alt="Falcon Logo" class="logo-image">
+                    <div class="logo">R.<span>Samiccha</span></div>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="#all" class="nav-link active" data-filter="all">All Projects</a>
+                    <a href="#business-cards" class="nav-link" data-filter="business-cards">Business Cards</a>
+                    <a href="#social-media" class="nav-link" data-filter="social-media">Social Media</a>
+                    <a href="#flyers" class="nav-link" data-filter="flyers">Flyers</a>
+                    <a href="#thumbnails" class="nav-link" data-filter="thumbnails">Thumbnails</a>
+                    <a href="#ui-ux" class="nav-link" data-filter="ui-ux">UI/UX</a>
+                </div>
+                <button class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
         </nav>
     </header>
 
@@ -79,6 +82,7 @@
             <button class="cat-btn" data-filter="business-cards">Business Cards</button>
             <button class="cat-btn" data-filter="social-media">Social Media</button>
             <button class="cat-btn" data-filter="flyers">Flyers & Posters</button>
+            <button class="cat-btn" data-filter="thumbnails">Thumbnails</button>
             <button class="cat-btn" data-filter="ui-ux">UI/UX</button>
         </div>
     </nav>
@@ -87,8 +91,27 @@
     <div class="projects-container">
         <!-- Category Headers and Projects -->
         <div class="category-section" id="business-cards">
-            <h2 class="category-title" data-count="1">Business Cards</h2>
+            <h2 class="category-title" data-count="2">Business Cards</h2>
             <div class="projects-grid">
+                <!-- Business Card Item -->
+                <div class="project-item business-card-item" 
+                     data-front-img="images/front1.png"
+                     data-back-img="images/back1.png">
+                    <div class="card-preview">
+                        <img src="images/mockup.png" alt="Business Card Front">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Modern Business Card</h3>
+                        <p>Clean and professional design for corporate identity</p>
+                        <div class="project-tools">
+                            <span>Adobe Illustrator</span>
+                            <span>Photoshop</span>
+                            <button class="preview-btn">
+                                <i class="fas fa-search-plus"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <!-- Business Card Item -->
                 <div class="project-item business-card-item" 
                      data-front-img="images/front-1.png"
@@ -437,11 +460,46 @@
                     </div>
             </div>
         </div>
+        <div class="category-section" id="thumbnails">
+            <h2 class="category-title" data-count="2">Thumbnails</h2>
+            <div class="projects-grid">
+                <!-- thumbnail-1 -->
+                <div class="project-item" data-category="thumbnails">
+                    <img src="images/thumbnail.png" alt="Thumbnails">
+                    <div class="project-overlay">
+                        <h3>YouTube Thumbnail</h3>
+                        <p>YouTube Thumbnail Design for spiritual channel</p>
+                        <div class="project-tools">
+                            <span>Adobe Photoshop</span>
+                            <span>Figma</span>
+                            <button class="preview-btn">
+                                <i class="fas fa-search-plus"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- thumbnail-2 -->
+                <div class="project-item" data-category="thumbnails">
+                    <img src="images/thumbnail-2.png" alt="Thumbnails">
+                    <div class="project-overlay">
+                        <h3>YouTube Thumbnail</h3>
+                        <p>YouTube Thumbnail Design for spiritual channel</p>
+                        <div class="project-tools">
+                            <span>Adobe Photoshop</span>
+                            <span>Figma</span>
+                            <button class="preview-btn">
+                                <i class="fas fa-search-plus"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="category-section" id="ui-ux">
             <h2 class="category-title" data-count="1">UI/UX Designs</h2>
             <div class="projects-grid">
                 <!-- UI/UX -->
-                <div class="project-item" data-category="ui">
+                <div class="project-item" data-category="ui-ux">
                     <img src="images/ui-ux.png" alt="UI/UX Design">
                     <div class="project-overlay">
                         <h3>UI/UX Project</h3>

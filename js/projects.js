@@ -1,12 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuBtn = document.querySelector('.menu-btn');
     const navLinks = document.querySelector('.nav-links');
-    const body = document.body;
+    let scrollPosition = 0;
 
-    // Toggle menu
+    // Toggle menu and scroll lock
     menuBtn.addEventListener('click', function() {
         navLinks.classList.toggle('active');
         menuBtn.classList.toggle('active');
+        
+        if (navLinks.classList.contains('active')) {
+            // Store scroll position and disable scroll
+            scrollPosition = window.pageYOffset;
+            document.body.classList.add('nav-active');
+            document.body.style.top = `-${scrollPosition}px`;
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Restore scroll position and enable scroll
+            document.body.classList.remove('nav-active');
+            document.body.style.position = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+        }
     });
 
     // Close menu when clicking outside
@@ -14,6 +32,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!navLinks.contains(e.target) && !menuBtn.contains(e.target) && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             menuBtn.classList.remove('active');
+            document.body.classList.remove('nav-active');
+            document.body.style.position = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
         }
     });
 
@@ -22,6 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function() {
             navLinks.classList.remove('active');
             menuBtn.classList.remove('active');
+            document.body.classList.remove('nav-active');
+            document.body.style.position = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
         });
     });
 });
