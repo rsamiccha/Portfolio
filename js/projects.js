@@ -324,3 +324,85 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize sliders when DOM is loaded
     document.addEventListener('DOMContentLoaded', initializeGallerySliders);
 });
+
+// Hide loader after page load
+window.addEventListener('load', function() {
+    document.querySelector('.page-loader').classList.add('hidden');
+});
+
+// Toggle navigation menu on mobile view
+document.querySelector('.menu-btn').addEventListener('click', function() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+});
+
+// Ensure nav menu is hidden by default
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.remove('active');
+});
+
+// Focus Slider Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const focusSliderContainer = document.querySelector('.focus-slider-container');
+    const focusSlides = document.querySelector('.focus-slides');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    const dotsContainer = document.querySelector('.slider-dots');
+    let currentSlide = 0;
+    const totalSlides = document.querySelectorAll('.focus-slide').length;
+
+    // Initialize slides and dots
+    function initializeSlider() {
+        const slides = document.querySelectorAll('.focus-slide');
+        slides.forEach((slide, index) => {
+            slide.style.backgroundImage = `url(${slide.dataset.image})`;
+            const dot = document.createElement('div');
+            dot.classList.add('slider-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        focusSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        updateDots();
+    }
+
+    function updateDots() {
+        const dots = document.querySelectorAll('.slider-dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        goToSlide(currentSlide);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        goToSlide(currentSlide);
+    });
+
+    // Preview button click handler
+    document.querySelectorAll('.preview-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const projectItem = this.closest('.project-item');
+            const isFocusItem = projectItem.querySelector('img').src.includes('fokus');
+            
+            focusSliderContainer.classList.toggle('active', isFocusItem);
+            document.querySelector('.modal-image-container').style.display = isFocusItem ? 'none' : 'block';
+            
+            if (isFocusItem) {
+                currentSlide = 0;
+                goToSlide(0);
+            }
+        });
+    });
+
+    initializeSlider();
+});
