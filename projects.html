@@ -48,6 +48,75 @@
                 display: flex;
             }
         }
+        /* Focus Slider Styles */
+        .focus-slider-container {
+            display: none;
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .focus-slider-container.active {
+            display: block;
+        }
+
+        .focus-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .focus-slide {
+            min-width: 100%;
+            height: 500px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .slider-prev,
+        .slider-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .slider-prev {
+            left: 20px;
+        }
+
+        .slider-next {
+            right: 20px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .slider-dot.active {
+            background: white;
+        }
     </style>
 </head>
 <body>
@@ -154,8 +223,23 @@
         </div>
 
         <div class="category-section" id="social-media">
-            <h2 class="category-title" data-count="16">Social Media Designs</h2>
+            <h2 class="category-title" data-count="20">Social Media Designs</h2>
             <div class="projects-grid">
+                <!-- Focus 1 -->
+                <div class="project-item" data-category="social">
+                    <img src="images/fokus-1.png" alt="Focus Design">
+                    <div class="project-overlay">
+                        <h3>Focus Series One</h3>
+                        <p>Clean and minimalist focus-themed social media design</p>
+                        <div class="project-tools">
+                            <span>Adobe Illustrator</span>
+                            <span>Photoshop</span>
+                            <button class="preview-btn">
+                                <i class="fas fa-search-plus"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <!-- Special Menu -->
                 <div class="project-item" data-category="social">
                     <img src="images/special-menu.png" alt="Special Menu Design">
@@ -628,6 +712,19 @@
         <div class="modal-content">
             <button class="close-modal" aria-label="Close modal">&times;</button>
             
+            <!-- Focus Series Slider Container -->
+            <div class="focus-slider-container">
+                <div class="focus-slides">
+                    <div class="focus-slide" data-image="images/fokus-1.png"></div>
+                    <div class="focus-slide" data-image="images/green-fokus.png"></div>
+                    <div class="focus-slide" data-image="images/fokus-yellow.png"></div>
+                    <div class="focus-slide" data-image="images/red-fokus.png"></div>
+                </div>
+                <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                <div class="slider-dots"></div>
+            </div>
+
             <!-- Business Card Preview Container -->
             <div class="modal-card-preview">
                 <div class="card-sides">
@@ -714,6 +811,71 @@
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.remove('active');
+        });
+
+        // Add this to your existing JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const focusSliderContainer = document.querySelector('.focus-slider-container');
+            const focusSlides = document.querySelector('.focus-slides');
+            const prevBtn = document.querySelector('.slider-prev');
+            const nextBtn = document.querySelector('.slider-next');
+            const dotsContainer = document.querySelector('.slider-dots');
+            let currentSlide = 0;
+            const totalSlides = document.querySelectorAll('.focus-slide').length;
+
+            // Initialize slides and dots
+            function initializeSlider() {
+                const slides = document.querySelectorAll('.focus-slide');
+                slides.forEach((slide, index) => {
+                    slide.style.backgroundImage = `url(${slide.dataset.image})`;
+                    const dot = document.createElement('div');
+                    dot.classList.add('slider-dot');
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToSlide(index));
+                    dotsContainer.appendChild(dot);
+                });
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                focusSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
+                updateDots();
+            }
+
+            function updateDots() {
+                const dots = document.querySelectorAll('.slider-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                goToSlide(currentSlide);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                goToSlide(currentSlide);
+            });
+
+            // Modify your existing preview button click handler
+            document.querySelectorAll('.preview-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const projectItem = this.closest('.project-item');
+                    const isFocusItem = projectItem.querySelector('img').src.includes('fokus');
+                    
+                    focusSliderContainer.classList.toggle('active', isFocusItem);
+                    document.querySelector('.modal-image-container').style.display = isFocusItem ? 'none' : 'block';
+                    
+                    if (isFocusItem) {
+                        currentSlide = 0;
+                        goToSlide(0);
+                    }
+                });
+            });
+
+            initializeSlider();
         });
     </script>
 </body>
